@@ -44,3 +44,30 @@ console.log(firstName + ' ' + lastName);
 
 /* Math operators */
 
+
+var year, yearJohn, yearMark;
+year = 2020;
+yearJohn = year - 23;
+yearMark = year - 24;
+
+var johnIsOlder = yearJohn < yearMark;
+console.log(johnIsOlder);
+console.log(typeof johnIsOlder);
+
+/**
+ * Operator precedence
+ */
+
+ //coding challenge
+ var markHeight = 1.25;
+ var markMass = 85;
+ var johnHeight = 1.15;
+ var johnMass = 92;
+
+ var johnBmi = johnMass / (johnHeight^2);
+ var markBmi = markMass / (markHeight^2);
+ var markHasHigherBmiThanJohn = markHeight > johnBmi;
+
+ console.log('John\'s BMI is ' + johnBmi);
+ console.log('Mark\'s BMI is ' + markBmi);
+ console.log('The fact that Mark has a higher BMI than John is ' + markHasHigherBmiThanJohn);

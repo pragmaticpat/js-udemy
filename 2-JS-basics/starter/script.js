@@ -71,3 +71,67 @@ console.log(typeof johnIsOlder);
  console.log('John\'s BMI is ' + johnBmi);
  console.log('Mark\'s BMI is ' + markBmi);
  console.log('The fact that Mark has a higher BMI than John is ' + markHasHigherBmiThanJohn);
+
+ /**
+  * Boolean logic
+  *
+  * Interesting approach of using switch(true) { ... } as a hack on the switch statement for logic structures 
+  * === is equality checker
+  */
+
+  /**
+   * Falsy values undefined, null, 0, '', NaN
+   * truthy values NOT falsy values
+   */
+
+   var height = 23;
+   if(height || height === 0) {
+       console.log('variable is defined');
+   } else{
+       console.log('variable is not defined')
+   }
+  
+   /**
+    * === is strict comparison
+    * == is type comparison with type coercion
+    */
+
+    if(height === '23'){
+        console.log('The == operator does type coercion')
+    }
+
+    /** Coding challenge 2 */
+    
+    var averageGameScoresForJohn = (15+120+13)/3;
+    var averageGameScoresForMike = (15+120+103)/3;
+    var averageGameScoresForMary = (15+120+10)/3;
+
+    var winner;
+    var winnerAverage;
+
+    if(averageGameScoresForJohn === averageGameScoresForMary && averageGameScoresForJohn === averageGameScoresForMike){
+        winner = 'All';
+        winnerAverage = averageGameScoresForMary;
+    } else if (averageGameScoresForJohn === averageGameScoresForMary && averageGameScoresForMary > averageGameScoresForMike){
+        winner = 'John and Mary';
+        winnerAverage = averageGameScoresForMary;
+    } else if (averageGameScoresForJohn === averageGameScoresForMike && averageGameScoresForMike > averageGameScoresForMary){
+        winner = 'John and Mike';
+        winnerAverage = averageGameScoresForMike;
+    } else if (averageGameScoresForMary === averageGameScoresForMike && averageGameScoresForMary > averageGameScoresForJohn){
+        winner  ='Mary and Mike';
+        winnerAverage = averageGameScoresForMike;
+    } else if (averageGameScoresForJohn > averageGameScoresForMary && averageGameScoresForJohn > averageGameScoresForMike){
+        winner = 'John';
+        winnerAverage= averageGameScoresForJohn;
+    } else if (averageGameScoresForMary > averageGameScoresForJohn && averageGameScoresForMary > averageGameScoresForMike){
+        winner = 'Mary';
+        winnerAverage = averageGameScoresForMary;
+    } else if (averageGameScoresForMike > averageGameScoresForJohn && averageGameScoresForMike > averageGameScoresForMary){
+        winner = 'Mike';
+        winnerAverage = averageGameScoresForMike;
+    }
+
+    console.log( winner + '\'s team is the winner, with an average score of ' + winnerAverage);
+
+

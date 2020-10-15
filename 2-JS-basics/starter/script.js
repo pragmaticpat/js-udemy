@@ -102,36 +102,85 @@ console.log(typeof johnIsOlder);
 
     /** Coding challenge 2 */
     
-    var averageGameScoresForJohn = (15+120+13)/3;
-    var averageGameScoresForMike = (15+120+103)/3;
-    var averageGameScoresForMary = (15+120+10)/3;
+    var averageForJohn = (15 + 120 + 13) / 3;
+    var averageForMike = (15 + 120 + 103) / 3;
+    var averageForMary = (15 + 120 + 10)/3;
 
     var winner;
     var winnerAverage;
 
-    if(averageGameScoresForJohn === averageGameScoresForMary && averageGameScoresForJohn === averageGameScoresForMike){
+    if(averageForJohn === averageForMary && averageForJohn === averageForMike){
         winner = 'All';
-        winnerAverage = averageGameScoresForMary;
-    } else if (averageGameScoresForJohn === averageGameScoresForMary && averageGameScoresForMary > averageGameScoresForMike){
+        winnerAverage = averageForMary;
+    } else if (averageForJohn === averageForMary && averageForMary > averageForMike){
         winner = 'John and Mary';
-        winnerAverage = averageGameScoresForMary;
-    } else if (averageGameScoresForJohn === averageGameScoresForMike && averageGameScoresForMike > averageGameScoresForMary){
+        winnerAverage = averageForMary;
+    } else if (averageForJohn === averageForMike && averageForMike > averageForMary){
         winner = 'John and Mike';
-        winnerAverage = averageGameScoresForMike;
-    } else if (averageGameScoresForMary === averageGameScoresForMike && averageGameScoresForMary > averageGameScoresForJohn){
+        winnerAverage = averageForMike;
+    } else if (averageForMary === averageForMike && averageForMary > averageForJohn){
         winner  ='Mary and Mike';
-        winnerAverage = averageGameScoresForMike;
-    } else if (averageGameScoresForJohn > averageGameScoresForMary && averageGameScoresForJohn > averageGameScoresForMike){
+        winnerAverage = averageForMike;
+    } else if (averageForJohn > averageForMary && averageForJohn > averageForMike){
         winner = 'John';
-        winnerAverage= averageGameScoresForJohn;
-    } else if (averageGameScoresForMary > averageGameScoresForJohn && averageGameScoresForMary > averageGameScoresForMike){
+        winnerAverage= averageForJohn;
+    } else if (averageForMary > averageForJohn && averageForMary > averageForMike){
         winner = 'Mary';
-        winnerAverage = averageGameScoresForMary;
-    } else if (averageGameScoresForMike > averageGameScoresForJohn && averageGameScoresForMike > averageGameScoresForMary){
+        winnerAverage = averageForMary;
+    } else if (averageForMike > averageForJohn && averageForMike > averageForMary){
         winner = 'Mike';
-        winnerAverage = averageGameScoresForMike;
+        winnerAverage = averageForMike;
+    } else {
+        winner = 'Batman';
+        winnerAverage = 'NaNaNaNaNaNaNaNa';
     }
 
     console.log( winner + '\'s team is the winner, with an average score of ' + winnerAverage);
 
+/**
+ * Functions
+ */
 
+ function calculateAge(birthYear){
+     return 2020 - birthYear;
+ }
+
+ var age = calculateAge(1980);
+
+ console.log(age);
+
+function yearsToRetirement(year, firstName){
+    var age = calculateAge(year);
+    var retirement = 65 - age;
+    if(retirement > 0){
+        console.log(firstName + ' retires in ' + retirement + ' years.');
+    } else {
+        console.log(firstName + ' is already retired');
+    }
+    
+}
+
+yearsToRetirement(1990, 'John');
+yearsToRetirement(1950, 'James');
+
+/**
+ * function statements and expressions
+ */
+
+ //function expression
+ var whatDoYouDo = function(job, firstName){
+    switch(job){
+        case 'teacher':
+            return firstName + ' teaches kids how to code';
+        case 'driver':
+            return firstName + ' drivers a cab in Lisbon';
+        case 'designer':
+            return firstName + ' designs beautiful websites';
+        default:
+            return firstName + ' does ' + job + '.';
+    }
+ }
+
+ console.log(whatDoYouDo('teacher','John'));
+ console.log(whatDoYouDo('designer','Jane'));
+ console.log(whatDoYouDo('retired','Mark'));

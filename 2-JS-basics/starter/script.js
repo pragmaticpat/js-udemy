@@ -336,7 +336,7 @@ console.log(firstName + ' ' + lastName);
 
 /** Coding Challenge 5 */
 
-var tipCalculatorJohn = {
+var john = {
     familyName: 'John',
     bills: [124, 48, 268, 180, 42],
     tips: [],
@@ -358,9 +358,9 @@ var tipCalculatorJohn = {
     }
 }
 
-tipCalculatorJohn.calculateTips();
+john.calculateTips();
 
-var tipCalculatorMark = {
+var mark = {
     familyName: 'Mark',
     bills: [77, 475, 110, 45],
     tips: [],
@@ -382,7 +382,7 @@ var tipCalculatorMark = {
     }
 }
 
-tipCalculatorMark.calculateTips();
+mark.calculateTips();
 
 // Extra Credit
 
@@ -395,15 +395,15 @@ function getAverageTips(tipsArray){
     return sum / tipsArray.length;
 }
 
-var averageTipsForJohn = getAverageTips(tipCalculatorJohn.tips);
-var averageTipsForMark = getAverageTips(tipCalculatorMark.tips);
+john.average = getAverageTips(john.tips);
+mark.average = getAverageTips(mark.tips);
 
-console.log(averageTipsForJohn, averageTipsForMark);
+console.log(john.average, mark.average);
 
-if(averageTipsForJohn > averageTipsForMark) {
-    console.log( 'John\'s family has higher average tip of ' + averageTipsForJohn);
-} else if (averageTipsForMark > averageTipsForJohn){
-    console.log( 'Mark\'s family has higher average tip of ' + averageTipsForMark);
+if(john.average > mark.average) {
+    console.log( john.familyName + '\'s family has higher average tip of ' + john.average);
+} else if (mark.average > john.average){
+    console.log( mark.familyName + '\'s family has higher average tip of ' + mark.average);
 } else {
-    console.log('It\s a tie! Both families averaged tips of ' + averageTipsForJohn);
+    console.log('It\s a tie! Both families averaged tips of ' + john.average);
 }
